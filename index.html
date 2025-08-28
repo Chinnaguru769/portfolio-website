@@ -1,0 +1,532 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Fresh Graduate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #49dc0a 100%);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background-color: blueviolet;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            background-color: aqua;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #667eea;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #667eea }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-indigo-600">Portfolio</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-600 transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 transition-colors">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-indigo-600 transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition-colors">Projects</a>
+                    <a href="#education" class="text-gray-700 hover:text-indigo-600 transition-colors">Education</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="floating">
+                        <img src="https://github.com/Chinnaguru769/portfolio-website/blob/main/profile1.jpg?raw=true" alt="Professional headshot of a young graduate smiling confidently in business casual attire against a neutral background" class="rounded-full w-64 h-64 mx-auto md:mx-0 border-4 border-white shadow-2xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gray-200 rounded-full w-64 h-64 flex items-center justify-center text-6xl text-indigo-600\'><i class=\'fas fa-user\'></i></div>'">
+                    </div>
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">Hi, I'm <span class="text-yellow-300">Chinna Guravaiah Gangula</span></h1>
+                    <div class="typewriter text-xl md:text-2xl text-white mb-6">B.tech Information Technology student</div>
+                    <p class="text-gray-100 text-lg mb-8">Passionate about creating innovative solutions and eager to contribute to meaningful projects. Ready to bring fresh perspectives and dedicated work ethics.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#projects" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors shadow-lg">View My Work</a>
+                        <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-300 transition-colors">Get In Touch</a>
+                        <!-- Download Resume Button -->
+                    <a href="https://github.com/Chinnaguru769/portfolio-website/blob/main/Guru%20resume.pdf" download class="bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-colors mb-4">
+                        My Resume
+                    </a>
+                    <!-- Social Media Links -->
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://www.linkedin.com/in/chinna-guravaiah-gangula-a10847300" target="_blank" class="text-white hover:text-yellow-300 transition-colors">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="https://github.com/Chinnaguru769 " target="_blank" class="text-white hover:text-yellow-300 transition-colors">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                        <a href="https://www.instagram.com/guru_chinna769" target="_blank" class="text-white hover:text-yellow-300 transition-colors">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-blue-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://github.com/Chinnaguru769/portfolio-website/blob/main/profile1.jpg?raw=true" alt="Young professional working on a laptop in a modern co-working space with plants and natural lighting" class="rounded-lg shadow-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gray-200 rounded-lg w-full h-64 flex items-center justify-center text-6xl text-indigo-600\'><i class=\'fas fa-laptop-code\'></i></div>'">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">My Journey</h3>
+                    <p class="text-gray-600 mb-6">
+                        I'm currently pursuing B.tech in information technology student with a passion for web development and software engineering. 
+                        During my studies, I developed strong problem-solving skills and a solid foundation in various 
+                        programming languages and technologies.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        I believe in continuous learning and staying updated with the latest industry trends. 
+                        My goal is to contribute to innovative projects while growing both personally and professionally.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-graduation-cap text-indigo-600"></i>
+                            </div>
+                            <span class="text-gray-700">IT student</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-code text-indigo-600"></i>
+                            </div>
+                            <span class="text-gray-700">Full Stack Developer</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-lightbulb text-indigo-600"></i>
+                            </div>
+                            <span class="text-gray-700">Problem Solver</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-users text-indigo-600"></i>
+                            </div>
+                            <span class="text-gray-700">Team Player</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-300">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Technical Skills</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">I've developed a diverse set of skills through academic projects and personal learning journeys.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Frontend Skills -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="bg-indigo-100 p-4 rounded-full inline-block">
+                            <i class="fas fa-paint-brush text-indigo-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Frontend Development</h3>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between items-center">
+                            <span>HTML/CSS</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>JavaScript</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>React</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="bg-indigo-100 p-4 rounded-full inline-block">
+                            <i class="fas fa-server text-indigo-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Backend Development</h3>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between items-center">
+                            <span>Node.js</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Python</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>MySQL</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>MongoDB</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="bg-indigo-100 p-4 rounded-full inline-block">
+                            <i class="fas fa-tools text-indigo-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Tools & Technologies</h3>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between items-center">
+                            <span>Git & GitHub</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>VS Code</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="bg-indigo-100 p-4 rounded-full inline-block">
+                            <i class="fas fa-comments text-indigo-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Soft Skills</h3>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between items-center">
+                            <span>Communication</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Teamwork</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Problem Solving</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Time Management</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-yellow-400">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Featured Projects</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Here are some of the projects I've worked on to demonstrate my skills and passion for development.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="project-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/67edece8-4e20-44d9-836c-a637af0d220d.png" alt="E-commerce website dashboard showing product listings and shopping cart functionality with modern UI design" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gray-200 w-full h-48 flex items-center justify-center text-4xl text-indigo-600\'><i class=\'fas fa-shopping-cart\'></i></div>'">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">A full-stack e-commerce solution with user authentication, product management, and payment integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="project-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9a5caa0b-ff7a-46c1-bb94-5c46f8468c0d.png" alt="Weather application interface showing current conditions and forecast with clean modern design and weather icons" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gray-200 w-full h-48 flex items-center justify-center text-4xl text-indigo-600\'><i class=\'fas fa-cloud-sun\'></i></div>'">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Weather App</h3>
+                        <p class="text-gray-600 mb-4">Real-time weather application with location detection and 5-day forecast using weather API integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">API</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">CSS3</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="project-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2a6a060f-2a32-47bf-9901-fa7c9e754e46.png" alt="Task management application interface showing todo lists, calendar integration, and progress tracking features" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gray-200 w-full h-48 flex items-center justify-center text-4xl text-indigo-600\'><i class=\'fas fa-tasks\'></i></div>'">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Task Manager</h3>
+                        <p class="text-gray-600 mb-4">Productivity app with drag-and-drop functionality, due dates, and collaborative features for team projects.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Vue.js</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Firebase</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-semibold">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-red-300">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Education</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Timeline -->
+                <div class="relative">
+                    <!-- Education -->
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-semibold text-indigo-600 mb-8">Education</h3>
+                        <div class="space-y-8">
+                            <div class="timeline-item pl-8 relative">
+                                <div class="absolute -left-2 top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                                <div class="bg-gray-200 p-6 rounded-lg shadow-md">
+                                    <h4 class="text-xl font-semibold mb-2">B.Tech in Information Technology</h4>
+                                    <p class="text-gray-600 mb-2">PACE institute of technology and sciences</p>
+                                    <p class="text-sm text-gray-500 mb-4">2022 - 2026 | CGPA: 8.0</p>
+                                    <p class="text-gray-600">Relevant coursework: Data Structures, Algorithms, Web Development, Database Systems, Software Engineering</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item pl-8 relative">
+                                <div class="absolute -left-2 top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                                <div class="bg-gray-200 p-6 rounded-lg shadow-md">
+                                    <h4 class="text-xl font-semibold mb-2">Intermediate in M.P.C</h4>
+                                    <p class="text-gray-600 mb-2">GOVT. JUNIOR COLLEGE</p>
+                                    <p class="text-sm text-gray-500 mb-4">2019 - 2021 | MARKS: 835</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            <div class="timeline-item pl-8 relative">
+                                <div class="absolute -left-2 top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                                <div class="bg-gray-200 p-6 rounded-lg shadow-md">
+                                    <h4 class="text-xl font-semibold mb-2">10th CLASS</h4>
+                                    <p class="text-gray-600 mb-2">ZILLLA PARISHAD HIGH SCHOOL</p>
+                                    <p class="text-sm text-gray-500 mb-4">2019|GPA:9.8</p>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-pink-300">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Get In Touch</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">I'm always open to discussing new opportunities and interesting projects.</p>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Let's Connect</h3>
+                    <p class="text-gray-600 mb-8">
+                        I'm currently looking for entry-level opportunities where I can apply my skills and continue learning. 
+                        If you have any questions or would like to discuss potential collaborations, feel free to reach out!
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="text-gray-600">gangulachinna275@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Phone</p>
+                                <p class="text-gray-600">+91 7989659712</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-linkedin text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Linkedin</p>
+                                <p class="text-gray-600">https://www.linkedin.com/in/chinna-guravaiah-gangula-a10847300</p>
+                            </div>
+                        </div>
+                                               <div class="flex items-center">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-linkedin text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">GitHub</p>
+                                <p class="text-gray-600">https://github.com/Chinnaguru769</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Location</p>
+                                <p class="text-gray-600">Andhra pradesh, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
